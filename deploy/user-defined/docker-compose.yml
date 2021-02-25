@@ -1,0 +1,19 @@
+version: "3.6"
+
+#docker run -d --hostname my-rabbit --name some-rabbit rabbitmq:3      
+
+networks:
+  default:
+    name: f1_edge
+
+services:
+  air-rabbit:
+    container_name: rabbit01
+    image: rabbitmq:3-management
+#    environment:
+#    - RABBITMQ_ERLANG_COOKIE='secret cookie here'
+#    - RABBITMQ_NODENAME=rabbit@some-rabbit
+    ports:
+      - 0.0.0.0:5672:5672
+      - 0.0.0.0:15672:15672
+      
